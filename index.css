@@ -1,0 +1,468 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+.name{
+    color:#fff;
+}
+#description{
+    color:aliceblue;
+}
+h2 {
+    font-size: 32px;
+    color: #fff;
+    margin: 10px 0;
+}
+ p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e74c3c; /* Red color */
+    font-style:oblique ;
+}
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+     /* Put particles behind content */
+    background-color: transparent; /* Make sure the background is transparent */
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar img {
+    height: 40px; /* Adjust logo size */
+}
+
+/* Hamburger menu icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Navigation links */
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 8px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #d65dda;
+}
+
+/* Container for the main text content */
+.cont {
+    text-align: center;
+    margin: 100px 0;
+    padding: 0 20px;
+}
+
+.cont p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e74c3c; /* Red color */
+    font-style:oblique ;
+}
+
+.cont h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 58px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.cont h2 span {
+    color: #e74c3c; /* Red color */
+    font-weight: bold;
+}
+
+.cont h2 span:first-child {
+    color: #e74c3c; /* Gold color */
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;  /* Hide the navigation links on small screens */
+        flex-direction: column;
+        transform: translateX(100%);  /* Start off the screen */
+        width: 50%;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        height: 70vh;
+        left: 0;  /* Start from the left */
+        padding: 10px 5px;
+        border: 1px solid #d65dda; /* White border */
+        border-radius: 8px;
+        /* Slight rotation for the "pitch" effect */
+        transform-origin: top right;
+        transition: transform 5s ease, opacity 5 ease; /* Smooth transition for both sliding and fading */
+        opacity: 0;  /* Start with 0 opacity */
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .navbar ul li a {
+        font-size: 18px;
+    }
+
+    .menu-icon {
+        display: flex;  /* Show the hamburger icon on small screens */
+    }
+
+    /* Show the navbar links when the menu is open */
+    .navbar.open ul {
+        display: flex;
+        transform: translateX(0) rotate(0);  /* Slide in from the right with no rotation */
+        opacity: 1;  /* Make the navbar fully visible */
+    }
+    .navbar.open #particles-js {
+        z-index: -2; /* Ensure it's behind the navbar */
+    }
+
+    /* Animation for the hamburger icon when clicked */
+    .menu-icon.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); /* First bar rotates */
+    }
+
+    .menu-icon.open .bar:nth-child(2) {
+        opacity: 0;  /* Middle bar disappears */
+    }
+
+    .menu-icon.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px); /* Third bar rotates */
+    }
+    .cont p {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #e74c3c; /* Red color */
+        font-style:oblique ;
+    }
+    
+    .cont h2 {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 32px;
+        color: #fff;
+        margin: 10px 0;
+    }
+    #countdown {
+        font-family: Arial, sans-serif;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+}
+#countdown {
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+/* Style each time block (Days, Hours, Minutes, Seconds) */
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    color: white;
+    border-radius: 50%;  /* Make it a circle */
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #fff; /* White border */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the labels for each time block (Days, Hours, Minutes, Seconds) */
+.time span {
+    font-size: 14px;
+    color: #d65dda;
+    text-transform: uppercase;
+}
+.back{
+    width:30%;
+    height: 60vh;
+    opacity: 0.2;
+    z-index: -1;
+}
+.headp {
+    position: relative;
+    /* background-image: url('engin-akyurt-XA-V7cOCUSM-unsplash.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    left:10px;
+    gap: 90px;
+    
+    
+
+    
+}
+.headp img{
+    width: 20%;
+    opacity: 10;
+    left:10px;
+
+}
+.off {
+    position: relative; /* Positions it relative to its normal position */
+    right: 1px;           /* Moves it to the right side of the parent container */
+    top: -2px;          /* Raises it by 1px *
+    text-align: right;  /* Aligns the text content to the right */
+}
+.parent {
+    display: flex;
+    justify-content: flex-end; /* Push child elements to the right */
+}
+
+.desc {
+    color: #fff;
+    font-size: 20px;
+    width: 30%;
+    transform: translateY(-170px) translateX(-530px);  /* Move 200px up and 100px left */
+}
+button {
+    background-color: red; /* Red background */
+    color: white;           /* White text */
+    font-size: 16px;        /* Text size */
+    padding: 10px 10px;     /* Padding around the text */
+    border: none;           /* Remove the default border */
+    border-radius: 5px;     /* Rounded corners */
+    cursor: pointer;       /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    width: 10%;
+    transform: translateY(-150px) translateX(-780px);
+    justify-content: center;
+}
+
+button:hover {
+    background-color: darkred; /* Darker red on hover */
+    transform: scale(1.05);     /* Slightly enlarge on hover */
+    width: 10%;
+    transform: translateY(-150px) translateX(-780px);
+    justify-content: center;
+}
+
+button:active {
+    background-color: crimson; /* Even darker red when the button is pressed */
+    width: 10%;
+    transform: translateY(-150px) translateX(-780px);
+    justify-content: center;
+
+}
+
+/* Container for the main text content */
+.cont1 {
+    text-align: center;
+    margin: 100px 0;
+    padding: 0 15px;
+    left:20px;
+}
+
+.cont1 p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #e74c3c; /* Red color */
+    font-style:oblique ;
+}
+
+.cont1 h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 58px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.cont1 h2 span {
+    color: #e74c3c; /* Red color */
+    font-weight: bold;
+}
+
+.cont1 h2 span:first-child {
+    color: #e74c3c; /* Gold color */
+}
+/* Basic styling for the product container */
+#product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Product card style */
+.product {
+    width: 300px;
+    margin: 20px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* The actual product card (container) */
+.product-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* The image within the product card */
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+/* Zoom effect on hover */
+.product-card:hover .product-image {
+    transform: scale(1.1);
+}
+
+/* Active state (zoom stays) */
+.product-card.active .product-image {
+    transform: scale(1.2);
+}
+
+/* Product details and button */
+.product-name {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.product-description,
+.product-price,
+.product-category,
+.product-size,
+.product-color,
+.product-brand {
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-to-cart:hover {
+    background-color: darkred;
+}
+/* Styling for Product Images */
+.works-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.works-image:hover {
+    transform: scale(1.05);
+}
+
+/* Styling for the Add to Cart Button */
+.add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.add-to-cart:hover {
+    background-color: darkred;
+}
+#money{
+    color: goldenrod;
+}

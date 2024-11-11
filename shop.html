@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoSwipe Gallery</title>
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.css">
+    <link rel="stylesheet" href="https://unpkg.com/photoswipe@5.2.2/dist/default-skin/default-skin.css">
+    <style>
+        /* Add basic styling for the gallery */
+        .my-gallery figure {
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            width: 100%;
+        }
+        .works-image {
+            max-width: 100%;
+            cursor: pointer;
+        }
+        .pswp {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100000;
+        }
+    </style>
+</head>
+<body>
+
+<div id="product-container"></div>
+
+<!-- PhotoSwipe Modal Structure -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe.min.js"></script>
+<script src="https://unpkg.com/photoswipe@5.2.2/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+
+// Polyfill for closest() if not already available
+if (!Element.prototype.closest) {
+    Element.prototype.closest = function(s) {
+        var el = this;
+        while (el) {
+            if (el.matches(s)) return el;
+            el = el.parentElement;
+        }
+        return null;
+    };
+}
+
+// Function to fetch products from JSON Server and render them
+function fetchAndDisplayProducts() {
+    fetch('http://localhost:3000/products')  // URL to your JSON Server
+        .then(response => response.json())  // Parse the JSON response
+        .then(products => {
+            const productContainer = document.getElementById('product-container');
+            productContainer.innerHTML = '';  // Clear any existing content
+
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product');
+
+                // HTML structure for each product, wrapped inside <figure> for PhotoSwipe
+                productDiv.innerHTML = `
+                    <div class="my-gallery">
+                        <figure class="col-12 col-md-6" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                            <a href="${product.imageUrl}" data-size="900x1200" itemprop="contentUrl">
+                                <img src="${product.imageUrl}" class="works-image" itemprop="thumbnail" alt="${product.name}">
+                            </a>
+                            <figcaption class="works-description" itemprop="caption description">
+                                <h4>${product.name} <small>${product.brand}</small></h4>
+                                <p>${product.description}</p>
+                                <p class="product-price">$${product.price.toFixed(2)}</p>
+                                <p class="product-category">Category: ${product.category}</p>
+                                <p class="product-size">Size: ${product.size}</p>
+                                <p class="product-color">Color: ${product.color}</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                `;
+                productContainer.appendChild(productDiv);
+            });
+
+            // Initialize PhotoSwipe after products are rendered
+            initPhotoSwipeFromDOM('.my-gallery');
+        })
+        .catch(error => {
+            console.error('Error fetching product data:', error);
+        });
+}
+
+// Call the fetchAndDisplayProducts function to render the products
+fetchAndDisplayProducts();
+
+// PhotoSwipe structure and initialization
+var initPhotoSwipeFromDOM = function(gallerySelector) {
+    var parseThumbnailElements = function(el) {
+        var thumbElements = el.querySelectorAll('figure'),
+            items = [],
+            size, item;
+
+        thumbElements.forEach(function(figureEl) {
+            var linkEl = figureEl.querySelector('a');
+            size = linkEl.getAttribute('data-size').split('x');
+            
+            if (!size || size.length !== 2) return;
+
+            item = {
+                src: linkEl.getAttribute('href'),
+                w: parseInt(size[0], 10),
+                h: parseInt(size[1], 10)
+            };
+
+            if (figureEl.querySelector('figcaption')) {
+                item.title = figureEl.querySelector('figcaption').innerHTML;
+            }
+
+            if (linkEl.querySelector('img')) {
+                item.msrc = linkEl.querySelector('img').getAttribute('src');
+            }
+
+            item.el = figureEl; // Save the element for later use
+            items.push(item);
+        });
+
+        return items;
+    };
+
+    var onThumbnailsClick = function(e) {
+        e.preventDefault();
+
+        var eTarget = e.target;
+        var clickedListItem = eTarget.closest('figure');
+
+        if (!clickedListItem) return;
+
+        var clickedGallery = clickedListItem.parentNode;
+        var items = parseThumbnailElements(clickedGallery);
+
+        var index = Array.from(clickedGallery.children).indexOf(clickedListItem);
+
+        if (index >= 0) {
+            openPhotoSwipe(index, clickedGallery, items);
+        }
+    };
+
+    var openPhotoSwipe = function(index, galleryElement, items) {
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+
+        var options = {
+            index: index,
+            showHideOpacity: true,
+            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+            getThumbBoundsFn: function(index) {
+                var thumbnail = items[index].el.querySelector('img');
+                var pageYScroll = window.pageYOffset || document.documentElement.scrollTop;
+                var rect = thumbnail.getBoundingClientRect();
+                return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+            }
+        };
+
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+    };
+
+    var galleryElements = document.querySelectorAll(gallerySelector);
+    galleryElements.forEach(function(galleryElement, i) {
+        galleryElement.setAttribute('data-pswp-uid', i + 1);
+        galleryElement.addEventListener('click', onThumbnailsClick);
+    });
+};
+
+</script>
+</body>
+</html>

@@ -1,188 +1,187 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Red T-shirt",
-        "description": "Comfortable cotton T-shirt",
-        "price": 19.99,
-        "imageUrl": "images/1-product-400x463.jpg",
-        "category": "T-shirts",
-        "color": "Red"
-       
-      },
-      {
-        "id": 2,
-        "name": "Blue Jeans",
-        "description": "Stylish blue jeans",
-        "price": 39.99,
-        "imageUrl": "images/2-product-400x463.jpg",
-        "category": "Jeans",
-        "color": "Blue"
-        
-      },
-      {
-        "id": 3,
-        "name": "Black Hoodie",
-        "description": "Warm and cozy hoodie for cold days",
-        "price": 49.99,
-        "imageUrl": "images/3-product-400x463.jpg",
-        "category": "Hoodies",
-        "size": "XL",
-        "color": "Black",
-        "brand": "Brand C"
-      },
-      {
-        "id": 4,
-        "name": "Red T-shirt",
-        "description": "Comfortable cotton T-shirt",
-        "price": 19.99,
-        "imageUrl": "images/4-product-400x463.jpg",
-        "category": "T-shirts",
-        "size": "M",
-        "color": "Red",
-        "brand": "Brand A"
-      },
-      {
-        "id": 5,
-        "name": "Blue Jeans",
-        "description": "Stylish blue jeans",
-        "price": 39.99,
-        "imageUrl": "images/5-product-400x463 (1).jpg",
-        "category": "Jeans",
-        "size": "L",
-        "color": "Blue",
-        "brand": "Brand B"
-      },
-      {
-        "id": 6,
-        "name": "Black Hoodie",
-        "description": "Warm and cozy hoodie for cold days",
-        "price": 49.99,
-        "imageUrl": "images/6-product-400x463.jpg",
-        "category": "Hoodies",
-        "size": "XL",
-        "color": "Black",
-        "brand": "Brand C"
-      },
-      {
-        "id": 7,
-        "name": "Red T-shirt",
-        "description": "Comfortable cotton T-shirt",
-        "price": 19.99,
-        "imageUrl": "images/7-product-400x463 (1).jpg",
-        "category": "T-shirts",
-        "size": "M",
-        "color": "Red",
-        "brand": "Brand A"
-      },
-      {
-        "id": 8,
-        "name": "Blue Jeans",
-        "description": "Stylish blue jeans",
-        "price": 39.99,
-        "imageUrl": "images/8-product-400x463.jpg",
-        "category": "Jeans",
-        "size": "L",
-        "color": "Blue",
-        "brand": "Brand B"
-      },
-      {
-        "id": 9,
-        "name": "Black Hoodie",
-        "description": "Warm and cozy hoodie for cold days",
-        "price": 49.99,
-        "imageUrl": "images/9-product-400x463.jpg",
-        "category": "Hoodies",
-        "color": "Black"
+  "products": [
+    {
+      "id": 1,
+      "name": "Red T-shirt",
+      "description": "Comfortable cotton T-shirt",
+      "price": 19.99,
+      "imageUrl": "images/1-product-400x463.jpg",
+      "category": "T-shirts",
+      "color": "Red"
+     
+    },
+    {
+      "id": 2,
+      "name": "Blue Jeans",
+      "description": "Stylish blue jeans",
+      "price": 39.99,
+      "imageUrl": "images/2-product-400x463.jpg",
+      "category": "Jeans",
+      "color": "Blue"
       
-      },{
-        "id": 10,
-        "name": "Red T-shirt",
-        "description": "Comfortable cotton T-shirt",
-        "price": 19.99,
-        "imageUrl": "images/10-product-400x463.jpg",
-        "category": "T-shirts",
-        "color": "Red"
-        
-      },
-      {
-        "id": 11,
-        "name": "Blue Jeans",
-        "description": "Stylish blue jeans",
-        "price": 39.99,
-        "imageUrl": "images/2-product-400x463.jpg",
-        "category": "Jeans",
-        "size": "L",
-        "color": "Blue",
-        "brand": "Brand B"
-      },
-      {
-        "id": 12,
-        "name": "Black Hoodie",
-        "description": "Warm and cozy hoodie for cold days",
-        "price": 49.99,
-        "imageUrl": "images/11-product-400x463.jpg",
-        "category": "Hoodies",
-        "size": "XL",
-        "color": "Black",
-        "brand": "Brand C"
-      },
-      {
-        "id": 13,
-        "name": "Red T-shirt",
-        "description": "Comfortable cotton T-shirt",
-        "price": 19.99,
-        "imageUrl": "images/13-product-400x463.jpg",
-        "category": "T-shirts",
-        "size": "M",
-        "color": "Red",
-        "brand": "Brand A"
-      },
-      {
-        "id": 14,
-        "name": "Blue Jeans",
-        "description": "Stylish blue jeans",
-        "price": 39.99,
-        "imageUrl": "images/14-product-400x463.jpg",
-        "category": "Jeans",
-        "size": "L",
-        "color": "Blue",
-        "brand": "Brand B"
-      },
-      {
-        "id": 15,
-        "name": "Black Hoodie",
-        "description": "Warm and cozy hoodie for cold days",
-        "price": 49.99,
-        "imageUrl": "images/15-product-400x463.jpg",
-        "category": "Hoodies",
-        "size": "XL",
-        "color": "Black",
-        "brand": "Brand C"
-      },
-      {
-        "id": 16,
-        "name": "Blue Jeans",
-        "description": "Stylish blue jeans",
-        "price": 39.99,
-        "imageUrl": "images/16-product-400x463.jpg",
-        "category": "Jeans",
-        "size": "L",
-        "color": "Blue",
-        "brand": "Brand B"
-      },
-      {
-        "id": 14,
-        "name": "Black Hoodie",
-        "description": "Warm and cozy hoodie for cold days",
-        "price": 49.99,
-        "imageUrl": "images/3-product-400x463.jpg",
-        "category": "Hoodies",
-        "size": "XL",
-        "color": "Black",
-        "brand": "Brand C"
-      }
+    },
+    {
+      "id": 3,
+      "name": "Black Hoodie",
+      "description": "Warm and cozy hoodie for cold days",
+      "price": 49.99,
+      "imageUrl": "images/3-product-400x463.jpg",
+      "category": "Hoodies",
+      "size": "XL",
+      "color": "Black",
+      "brand": "Brand C"
+    },
+    {
+      "id": 4,
+      "name": "Red T-shirt",
+      "description": "Comfortable cotton T-shirt",
+      "price": 19.99,
+      "imageUrl": "images/4-product-400x463.jpg",
+      "category": "T-shirts",
+      "size": "M",
+      "color": "Red",
+      "brand": "Brand A"
+    },
+    {
+      "id": 5,
+      "name": "Blue Jeans",
+      "description": "Stylish blue jeans",
+      "price": 39.99,
+      "imageUrl": "images/5-product-400x463 (1).jpg",
+      "category": "Jeans",
+      "size": "L",
+      "color": "Blue",
+      "brand": "Brand B"
+    },
+    {
+      "id": 6,
+      "name": "Black Hoodie",
+      "description": "Warm and cozy hoodie for cold days",
+      "price": 49.99,
+      "imageUrl": "images/6-product-400x463.jpg",
+      "category": "Hoodies",
+      "size": "XL",
+      "color": "Black",
+      "brand": "Brand C"
+    },
+    {
+      "id": 7,
+      "name": "Red T-shirt",
+      "description": "Comfortable cotton T-shirt",
+      "price": 19.99,
+      "imageUrl": "images/7-product-400x463 (1).jpg",
+      "category": "T-shirts",
+      "size": "M",
+      "color": "Red",
+      "brand": "Brand A"
+    },
+    {
+      "id": 8,
+      "name": "Blue Jeans",
+      "description": "Stylish blue jeans",
+      "price": 39.99,
+      "imageUrl": "images/8-product-400x463.jpg",
+      "category": "Jeans",
+      "size": "L",
+      "color": "Blue",
+      "brand": "Brand B"
+    },
+    {
+      "id": 9,
+      "name": "Black Hoodie",
+      "description": "Warm and cozy hoodie for cold days",
+      "price": 49.99,
+      "imageUrl": "images/9-product-400x463.jpg",
+      "category": "Hoodies",
+      "color": "Black"
+    
+    },{
+      "id": 10,
+      "name": "Red T-shirt",
+      "description": "Comfortable cotton T-shirt",
+      "price": 19.99,
+      "imageUrl": "images/10-product-400x463.jpg",
+      "category": "T-shirts",
+      "color": "Red"
+      
+    },
+    {
+      "id": 11,
+      "name": "Blue Jeans",
+      "description": "Stylish blue jeans",
+      "price": 39.99,
+      "imageUrl": "images/2-product-400x463.jpg",
+      "category": "Jeans",
+      "size": "L",
+      "color": "Blue",
+      "brand": "Brand B"
+    },
+    {
+      "id": 12,
+      "name": "Black Hoodie",
+      "description": "Warm and cozy hoodie for cold days",
+      "price": 49.99,
+      "imageUrl": "images/11-product-400x463.jpg",
+      "category": "Hoodies",
+      "size": "XL",
+      "color": "Black",
+      "brand": "Brand C"
+    },
+    {
+      "id": 13,
+      "name": "Red T-shirt",
+      "description": "Comfortable cotton T-shirt",
+      "price": 19.99,
+      "imageUrl": "images/13-product-400x463.jpg",
+      "category": "T-shirts",
+      "size": "M",
+      "color": "Red",
+      "brand": "Brand A"
+    },
+    {
+      "id": 14,
+      "name": "Blue Jeans",
+      "description": "Stylish blue jeans",
+      "price": 39.99,
+      "imageUrl": "images/14-product-400x463.jpg",
+      "category": "Jeans",
+      "size": "L",
+      "color": "Blue",
+      "brand": "Brand B"
+    },
+    {
+      "id": 15,
+      "name": "Black Hoodie",
+      "description": "Warm and cozy hoodie for cold days",
+      "price": 49.99,
+      "imageUrl": "images/15-product-400x463.jpg",
+      "category": "Hoodies",
+      "size": "XL",
+      "color": "Black",
+      "brand": "Brand C"
+    },
+    {
+      "id": 16,
+      "name": "Blue Jeans",
+      "description": "Stylish blue jeans",
+      "price": 39.99,
+      "imageUrl": "images/16-product-400x463.jpg",
+      "category": "Jeans",
+      "size": "L",
+      "color": "Blue",
+      "brand": "Brand B"
+    },
+    {
+      "id": 14,
+      "name": "Black Hoodie",
+      "description": "Warm and cozy hoodie for cold days",
+      "price": 49.99,
+      "imageUrl": "images/3-product-400x463.jpg",
+      "category": "Hoodies",
+      "size": "XL",
+      "color": "Black",
+      "brand": "Brand C"
+    }
 
-    ]
-  }
-  
+  ]
+}

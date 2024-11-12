@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Set the target date (e.g., Black Friday)
-    const targetDate = new Date("Nov 29, 2024 00:00:00").getTime();
+    const targetDate = new Date("Nov 30, 2024 00:00:00").getTime();
 
     // Update the countdown every second
     const countdownInterval = setInterval(function() {

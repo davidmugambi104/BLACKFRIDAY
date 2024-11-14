@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 "value": "#ead9ff"
               },
               "shape": {
-                "type": "circle",
+                "type": "star",
                 "stroke": {
                   "width": 0,
                   "color": "#000000"
